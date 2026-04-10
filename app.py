@@ -67,8 +67,8 @@ if page == "MIS-Status":
             # -------- APPLY FILTERS --------
 
             # Landscape filter
-            if selected_landscape != "All" and landscape_col in df.columns:
-                df = df[df[landscape_col] == selected_landscape]
+            if selected_block != "All" and block_col in df.columns:
+                df = df[df[block_col] == selected_block]
 
             # Month filter
             date_cols = ["__system.submissionDate", "meta.submissionDate"]
