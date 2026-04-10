@@ -33,16 +33,16 @@ if page == "MIS-Status":
 
         for form_name, config in FORMS.items():
             df_temp = load_odk_data(config["form_id"])
-            col = config.get("landscape_col")
+            col = config.get("block_col")
 
             if col and col in df_temp.columns:
                 all_landscapes.update(df_temp[col].dropna().unique())
 
-        all_landscapes = sorted(all_landscapes)
+        all_blocks = sorted(all_blocks)
 
         selected_landscape = st.selectbox(
             "Select Landscape",
-            ["All"] + list(all_landscapes)
+            ["All"] + list(all_blocks)
         )
 
     with col2:
@@ -62,7 +62,7 @@ if page == "MIS-Status":
 
             form_name, config = forms_list[i + j]
             df = load_odk_data(config["form_id"])
-            landscape_col = config.get("landscape_col")
+            block_col = config.get("block_col")
 
             # -------- APPLY FILTERS --------
 
@@ -94,9 +94,9 @@ if page == "MIS-Status":
 
                 st.caption(f"Total: {len(df)}")
 
-                if landscape_col and landscape_col in df.columns:
+                if block_col and block_col in df.columns:
                     grouped = (
-                        df.groupby(landscape_col)
+                        df.groupby(block_col)
                         .size()
                         .reset_index(name="Count")
                         .sort_values("Count", ascending=False)
@@ -107,7 +107,7 @@ if page == "MIS-Status":
                     st.dataframe(grouped, use_container_width=True, height=200)
 
                 else:
-                    st.warning(f"{landscape_col} not found")
+                    st.warning(f"{block_col} not found")
 
 elif page in FORMS:
     st.title(f"📥 {page} Report")
