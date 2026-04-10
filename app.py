@@ -110,7 +110,7 @@ if page == "MIS-Status":
                     st.warning(f"{block_col} not found")
 
 elif page in FORMS:
-    st.title(f"📥 {page} Report")
+    st.title(f"📥 {page}")
 
     config = FORMS[page]
     df = load_odk_data(config["form_id"])
