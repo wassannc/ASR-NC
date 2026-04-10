@@ -1,11 +1,11 @@
 FORMS = {
-    "Farmer Register": {
-        "form_id": "FarmerRegister_NF",
+    "1. NF- Register": {
+        "form_id": "NF- Register",
         "columns": ["plot_reg.date","plot_reg.landscape","plot_reg.gp","plot_reg.village","plot_reg.farmer_name","plot_reg.spouse","plot_reg.season","plot_reg.crop_model","plot_reg.main_crop","plot_reg.sowing_date"],
         "landscape_col": "plot_reg.landscape"
     },
-    "Activities": {
-        "form_id": "Activities-NF",
+    "1.1 NF- Activities": {
+        "form_id": "NF- Activities",
         "columns": ["Primary_details.date","Primary_details.landscape","Primary_details.gp","Primary_details.village","Primary_details.farmer_name","Primary_details.plot_ext","crop_activity","Nf_activites.nf_inputs","Nf_activites.Other_nf_input","Nf_activites.Qty_other_nfinput"],
         "landscape_col": "Primary_details.landscape"
     },
@@ -34,8 +34,8 @@ FORMS = {
         "columns": ["SubmissionDate","pd.landscape","pd.gp","pd.village","farm_equipmnt_hired","ASC_Entp","ud.chc_equipmnt_rented_date","ud.chc_equipmnt_hired_farmer","ud.chc_equipmnt_total_hours_used","ud.total_hired_cost"],
         "landscape_col": "pd.landscape"
     },
-    "Large & Small Ruminants": {
-        "form_id": "Large_Small_Ruminants",
+    "3. Livestock": {
+        "form_id": "Livestock",
         "columns": ["table_list_df.Month","table_list_df.Monthly_MIS","table_list_df.landscape","table_list_df.gp","table_list_df.village","table_list_df.livestock_type","table_list_df.Farmer"],
         "landscape_col": "table_list_df.landscape"
     } 
