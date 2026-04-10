@@ -29,19 +29,19 @@ if page == "MIS-Status":
     col1, col2 = st.columns(2)
 
     with col1:
-        all_landscapes = set()
+        all_blocks = set()
 
         for form_name, config in FORMS.items():
             df_temp = load_odk_data(config["form_id"])
             col = config.get("block_col")
 
             if col and col in df_temp.columns:
-                all_landscapes.update(df_temp[col].dropna().unique())
+                all_blocks.update(df_temp[col].dropna().unique())
 
         all_blocks = sorted(all_blocks)
 
-        selected_landscape = st.selectbox(
-            "Select Landscape",
+        selected_block = st.selectbox(
+            "Select Block",
             ["All"] + list(all_blocks)
         )
 
