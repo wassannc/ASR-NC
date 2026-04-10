@@ -102,7 +102,7 @@ if page == "MIS-Status":
                         .sort_values("Count", ascending=False)
                     )
 
-                    grouped.columns = ["Landscape", "Count"]
+                    grouped.columns = ["Block", "Count"]
 
                     st.dataframe(grouped, use_container_width=True, height=200)
 
