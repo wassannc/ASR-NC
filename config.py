@@ -9,7 +9,7 @@ FORMS = {
         "columns": ["Primary_details.date","Primary_details.block","Primary_details.gp","Primary_details.village","Primary_details.farmer_name","Primary_details.plot_ext","crop_activity","Nf_activites.nf_inputs","Nf_activites.Other_nf_input","Nf_activites.Qty_other_nfinput"],
         "block_col": "Primary_details.block"
     },
-    "BRC": {
+    "2.Bio Resource Center- (BRC)": {
         "form_id": "BRC_Units",
         "columns": ["SubmissionDate","table_list_pd.block","table_list_pd.brc_unit","table_list_pd.product_name","table_list_pd.brc_sale_date","table_list_pd.dj_sale_farmer","table_list_pd.gender","table_list_pd.sale_village","table_list_sd.sale_qty","table_list_sd.total_income","table_list_cd.crops","table_list_cd.crop_ext"],
         "block_col": "table_list_pd.block"
