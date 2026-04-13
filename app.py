@@ -114,7 +114,15 @@ elif page in FORMS:
 
     config = FORMS[page]
     df = load_odk_data(config["form_id"])
+    if "plot_reg.crop_model" in df.columns:
+        df["Crop Model Final"] = df["plot_reg.crop_model"]
 
+        if "plot_reg.Other_cropmodel" in df.columns:
+            df.loc[
+                df["plot_reg.crop_model"].str.lower().str.contains("others", na=False),
+                "Crop Model Final"
+            ] = df["plot_reg.Other_cropmodel"]
+    
     if df.empty:
         st.warning("No data found")
     else:
