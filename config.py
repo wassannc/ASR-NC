@@ -29,11 +29,6 @@ FORMS = {
         "columns": ["SubmissionDate","basic_info.block","basic_info.gp","basic_info.village","basic_info.orchard_type","basic_info.farmer_add","type"],
         "block_col": "basic_info.block"
     },
-    "Agri Service Centers": {
-        "form_id": "Agri Service Centers",
-        "columns": ["SubmissionDate","pd.block","pd.gp","pd.village","farm_equipmnt_hired","ASC_Entp","ud.chc_equipmnt_rented_date","ud.chc_equipmnt_hired_farmer","ud.chc_equipmnt_total_hours_used","ud.total_hired_cost"],
-        "block_col": "pd.block"
-    },
     "3. Livestock": {
         "form_id": "Livestock",
         "columns": ["table_list_df.Month","table_list_df.Monthly_MIS","table_list_df.block","table_list_df.gp","table_list_df.village","table_list_df.livestock_type","table_list_df.Farmer"],
