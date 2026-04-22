@@ -1,6 +1,6 @@
 import streamlit as st
 from config import FORMS
-from utils import load_odk_data
+from utils import load_data
 
 st.sidebar.title("Menu")
 
