@@ -30,7 +30,7 @@ if page == "MIS-Status":
         all_blocks = set()
 
         for form_name, config in FORMS.items():
-            df_temp = load_odk_data(config["form_id"])
+            df_temp = load_data(config["form_id"])
             col = config.get("block_col")
 
             if col and col in df_temp.columns:
@@ -59,7 +59,7 @@ if page == "MIS-Status":
                 break
 
             form_name, config = forms_list[i + j]
-            df = load_odk_data(config["form_id"])
+            df = load_data(config["form_id"])
             block_col = config.get("block_col")
 
             # -------- APPLY FILTERS --------
@@ -111,7 +111,7 @@ elif page in FORMS:
     st.title(f"📥 {page}")
 
     config = FORMS[page]
-    df = load_odk_data(config["form_id"])
+    df = load_data(config["form_id"])
     if "plot_reg.crop_model" in df.columns:
         df["Crop Model Final"] = df["plot_reg.crop_model"]
 
