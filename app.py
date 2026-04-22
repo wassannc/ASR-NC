@@ -1,8 +1,6 @@
 import streamlit as st
 from config import FORMS
 from utils import load_odk_data
-st.set_page_config(page_title="MIS Tracking-IINF", layout="wide")
-st.title("📊 MIS Tracking - IINF")
 
 st.sidebar.title("Menu")
 
