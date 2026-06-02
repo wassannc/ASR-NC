@@ -10,7 +10,10 @@ PROJECT_ID = st.secrets["PROJECT_ID"]
 @st.cache_data(ttl=300)
 def load_data(form_id):
     url = f"{ODK_URL}/v1/projects/{PROJECT_ID}/forms/{form_id}/submissions.csv"
-    
+    st.write("ODK_URL =", repr(ODK_URL))
+    st.write("PROJECT_ID =", repr(PROJECT_ID))
+    st.write("FORM_ID =", repr(form_id))
+    st.write("URL =", url)
     response = requests.get(url, auth=(USERNAME, PASSWORD))
 
     if response.status_code != 200:
