@@ -9,7 +9,7 @@ PROJECT_ID = st.secrets["PROJECT_ID"]
 
 @st.cache_data(ttl=300)
 def load_data(form_id):
-    url = f"{ODK_URL}/v1/projects/{PROJECT_ID}/forms/{form_id}.svc/Submissions"
+    url = f"{ODK_URL}/#/projects/{PROJECT_ID}/forms/{form_id}.svc/Submissions"
     
     response = requests.get(url, auth=(USERNAME, PASSWORD))
 
