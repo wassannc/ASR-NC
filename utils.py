@@ -20,10 +20,12 @@ def load_data(form_id):
         st.error(f"Error: {response.status_code}")
         return pd.DataFrame()
 
-    data = response.json()
+    import io
 
-    if "value" not in data:
+    if response.status_code != 200:
+        st.error(f"Error: {response.status_code}")
         return pd.DataFrame()
 
-    df = pd.json_normalize(data["value"])
+    df = pd.read_csv(io.StringIO(response.text))
+
     return df
