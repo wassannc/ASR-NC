@@ -32,6 +32,6 @@ FORMS = {
     "Meetings&Trainings": {
         "form_id": "Capacity_building",
         "columns": ["CB_info-block","CB_info-gp","CB_info-village","CB_info-Trainining_type","CB_info-Event_name","CB_info-Event_mode","Cb_info1-from_date","Cb_info1-days","Cb_info1-male","Cb_info1-female","Cb_info1-total_members","Cb_info1-Event_place"],
-        "block_col": "CB_info.block"
+        "block_col": "CB_info-block"
     }
 }
