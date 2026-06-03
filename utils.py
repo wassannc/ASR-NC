@@ -16,6 +16,10 @@ def load_data(form_id):
     st.write("URL =", url)
     response = requests.get(url, auth=(USERNAME, PASSWORD))
 
+    st.write("STATUS =", response.status_code)
+    st.write("CONTENT TYPE =", response.headers.get("content-type"))
+    st.write(response.text[:300])
+
     if response.status_code != 200:
         st.error(f"Error: {response.status_code}")
         return pd.DataFrame()
