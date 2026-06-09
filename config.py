@@ -26,6 +26,7 @@ FORMS = {
     "4.Intensification of Orchards": {
         "form_id": "Orchards_Intensification",
         "columns": ["SubmissionDate","basic_info-block","basic_info-gp","basic_info-village","basic_info-orchard_type","basic_info-farmer_add","type"],
+        "column_labels": {"SubmissionDate": "Date","basic_info-block": "Block","basic_info-gp": "GP","basic_info-village": "Village","basic_info-orchard_type": "Type of orchard","basic_info-farmer_add": "Farmer name","type": "Type"},
         "block_col": "basic_info-block"
     },
     "5.Micro Enterprizes": {
