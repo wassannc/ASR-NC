@@ -8,6 +8,7 @@ FORMS = {
     "1.1 NF- Activities": {
         "form_id": "NF- Activities",
         "columns": ["Primary_details-date","Primary_details-block","Primary_details-gp","Primary_details-village","Primary_details-farmer_name","Primary_details-plot_ext","crop_activity","Nf_activites-nf_inputs","Nf_activites-Other_nf_input","Nf_activites-Qty_other_nfinput"],
+        "column_labels": {"Primary_details-date": "Date","Primary_details-block": "Block","Primary_details-gp": "GP","Primary_details-village": "Village","Primary_details-farmer_name": "Farmer name","Primary_details-plot_ext": "Plot extent-acrs","crop_activity": "Crop activity","Nf_activites-nf_inputs": "NF Inputs applied","Nf_activites-Other_nf_input": "Other NF inputs","Nf_activites-Qty_other_nfinput": "Other NF input-qty"},
         "block_col": "Primary_details-block"
     },
     "2.Bio Resource Center- (BRC)": {
