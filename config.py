@@ -29,7 +29,7 @@ FORMS = {
         "columns": ["SubmissionDate","table_list_pd-block","table_list_pd-gp","table_list_pd-village","table_list_pd1-farmer_name","table_list_pd1-processing_hub_tool","table_list_pd1-processing_date","table_list_pd1-processed_for","table_list_pd2-processing_farmer_village","table_list_pd2-processing_farmer","table_list_pd2-processing_qty_kgs","table_list_pd2-rent_amount","table_list_pd3-Data_sub_by"],
         "block_col": "table_list_pd-block"
     },
-    "Meetings&Trainings": {
+    "4. Capacity Building": {
         "form_id": "Capacity_building",
         "columns": ["CB_info-block","CB_info-gp","CB_info-village","CB_info-Trainining_type","CB_info-Event_name","CB_info-Event_mode","Cb_info1-from_date","Cb_info1-days","Cb_info1-male","Cb_info1-female","Cb_info1-total_members","Cb_info1-Event_place"],
         "block_col": "CB_info-block"
