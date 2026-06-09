@@ -31,7 +31,7 @@ FORMS = {
     },
     "4. Capacity Building": {
         "form_id": "Capacity_building",
-        "columns": ["CB_info-block","CB_info-gp","CB_info-village","CB_info-cb_type","CB_info-Event_name","CB_info-Event_mode","Cb_info1-theme","Cb_info1-from_date","Cb_info1-to_date","Cb_info1-num_days","Cb_info1-male","Cb_info1-female","Cb_info1-total_members","b_info1-Event_place","Cb_info1-Data_sub_by"],
+        "columns": ["SubmissionDate","CB_info-block","CB_info-gp","CB_info-village","CB_info-cb_type","CB_info-Event_name","CB_info-Event_mode","Cb_info1-theme","Cb_info1-from_date","Cb_info1-to_date","Cb_info1-num_days","Cb_info1-male","Cb_info1-female","Cb_info1-total_members","b_info1-Event_place","Cb_info1-Data_sub_by"],
         "block_col": "CB_info-block"
     }
 }
