@@ -64,7 +64,7 @@ if page == "MIS-Status":
 
             # -------- APPLY FILTERS --------
 
-            # Landscape filter
+            # Block filter
             if selected_block != "All" and block_col in df.columns:
                 df = df[df[block_col] == selected_block]
 
