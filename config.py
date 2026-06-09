@@ -4,7 +4,7 @@ FORMS = {
         "columns": ["plot_reg-date","plot_reg-block","plot_reg-gp","plot_reg-village","plot_reg-farmer_name","plot_reg-spouse","plot_reg-season","Crop Model Final","plot_reg-main_crop","plot_reg-sowing_date"],
         "block_col": "plot_reg-block"
     },
-    "1.1NF- Activities": {
+    "1.1 NF- Activities": {
         "form_id": "NF- Activities",
         "columns": ["Primary_details-date","Primary_details-block","Primary_details-gp","Primary_details-village","Primary_details-farmer_name","Primary_details-plot_ext","crop_activity","Nf_activites-nf_inputs","Nf_activites-Other_nf_input","Nf_activites-Qty_other_nfinput"],
         "block_col": "Primary_details-block"
