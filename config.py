@@ -20,7 +20,7 @@ FORMS = {
       "3.Livestock": {
         "form_id": "Livestock",
         "columns": ["table_list_df-Month","table_list_df-Monthly_MIS","table_list_df-block","table_list_df-gp","table_list_df-village","table_list_df-livestock_type","table_list_df-Farmer"],
-        "column_labels": {"table_list_df-Month": "Month","table_list_df-Monthly_MIS": "Type of service","table_list_df-block": "block","table_list_df-gp": "GP","table_list_df-village": "Village","table_list_df-livestock_type": "Livestock type","table_list_df-Farmer": "Farmer name"},
+        "column_labels": {"table_list_df-Month": "Month","table_list_df-Monthly_MIS": "Type of service","table_list_df-block": "Block","table_list_df-gp": "GP","table_list_df-village": "Village","table_list_df-livestock_type": "Livestock type","table_list_df-Farmer": "Farmer name"},
         "block_col": "table_list_df-block"
     },
     "4.Intensification of Orchards": {
