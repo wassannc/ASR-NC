@@ -14,6 +14,7 @@ FORMS = {
     "2.Bio Resource Center- (BRC)": {
         "form_id": "BRC_Units",
         "columns": ["SubmissionDate","table_list_pd-block","table_list_pd-brc_unit","table_list_pd-product_name","table_list_pd-brc_sale_date","table_list_pd-dj_sale_farmer","table_list_pd-gender","table_list_pd-sale_village","table_list_sd-sale_qty","table_list_sd-total_income","table_list_cd-crops","table_list_cd-crop_ext"],
+        "column_labels": {"SubmissionDate": "Date","table_list_pd-block": "Block","table_list_pd-brc_unit": "BRC unit","table_list_pd-product_name": "Item name","table_list_pd-brc_sale_date": "Date of sale","table_list_pd-dj_sale_farmer": "Farmer/user,"table_list_pd-gender": "Gender","table_list_pd-sale_village": "Village","table_list_sd-sale_qty": "Quantity-litrs","table_list_sd-total_income": "Income-rs","table_list_cd-crops": "Crops","table_list_cd-crop_ext": "Extent-acres"},
         "block_col": "table_list_pd-block"
     },
       "3.Livestock": {
