@@ -32,6 +32,7 @@ FORMS = {
     "5.Micro Enterprizes": {
         "form_id": "Micro Enterprizes",
         "columns": ["SubmissionDate","table_list_pd-block","table_list_pd-gp","table_list_pd-village","table_list_pd1-farmer_name","table_list_pd1-processing_hub_tool","table_list_pd1-processing_date","table_list_pd1-processed_for","table_list_pd2-processing_farmer_village","table_list_pd2-processing_farmer","table_list_pd2-processing_qty_kgs","table_list_pd2-rent_amount","table_list_pd3-Data_sub_by"],
+        "column_labels": {"SubmissionDate": "Date","table_list_pd-block": "Block","table_list_pd-gp": "GP","table_list_pd-village": "Village","table_list_pd1-farmer_name": "Farmer name","table_list_pd1-processing_hub_tool": "Machine type","table_list_pd1-processing_date": "Date of processing","table_list_pd1-processed_for": "Processed for","table_list_pd2-processing_farmer_village": "Village from","table_list_pd2-processing_farmer": "Processing farmer","table_list_pd2-processing_qty_kgs": "Processed qty-KGs","table_list_pd2-rent_amount": "Rent amount-rs","table_list_pd3-Data_sub_by": "Data entered by"},
         "block_col": "table_list_pd-block"
     },
     "6.Capacity Building": {
