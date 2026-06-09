@@ -38,6 +38,7 @@ FORMS = {
     "6.Capacity Building": {
         "form_id": "Capacity_building",
         "columns": ["SubmissionDate","CB-info-block","CB-info-gp","CB-info-village","CB-info-cb_type","CB-info-Event_name","CB-info-Event_mode","Cb-info1-theme","Cb-info1-from_date","Cb-info1-to_date","Cb-info1-num_days","Cb-info1-male","Cb-info1-female","Cb-info1-total_members","Cb-info1-Event_place","Cb-info1-Data_sub_by"],
+        "column_labels": {"SubmissionDate": "Date","CB-info-block": "Block","CB-info-gp": "GP","CB-info-village": "Village","CB-info-cb_type": "Type of event","CB-info-Event_name": "Name of the event","CB-info-Event_mode": "Which mode conducted","Cb-info1-theme": "Theme","Cb-info1-from_date": "From Date","Cb-info1-to_date": "To Date","Cb-info1-num_days": "No. of Days","Cb-info1-male": "Total male participants","Cb-info1-female": "Total female participants","Cb-info1-total_members": "Total participants","Cb-info1-Event_place": "Place of event","Cb-info1-Data_sub_by": "Data entared by"},
         "block_col": "CB-info-block"
     }
 }
