@@ -1,8 +1,8 @@
 FORMS = {
     "1.NF- Register": {
         "form_id": "NF- Register",
-        "columns": ["plot_reg-date","plot_reg-block","plot_reg-gp","plot_reg-village","plot_reg-farmer_name","plot_reg-spouse","plot_reg-season","Crop Model Final","plot_reg-main_crop","plot_reg-sowing_date"],
-        "column_labels": {"plot_reg-date": "Date","plot_reg-block": "Block","plot_reg-gp": "GP","plot_reg-village": "Village","plot_reg-farmer_name": "Farmer name","plot_reg-spouse": "Spouse","plot_reg-season": "Season","Crop Model Final": "Crop model","plot_reg-main_crop": "Main crop","plot_reg-sowing_date": "Date of sowing"},
+        "columns": ["plot_reg-date","plot_reg-block","plot_reg-gp","plot_reg-village","plot_reg-farmer_name","plot_reg-spouse","plot_reg-season","Crop Model Final","plot_reg-plot_gps","plot_reg-main_crop","plot_reg-sowing_date"],
+        "column_labels": {"plot_reg-date": "Date","plot_reg-block": "Block","plot_reg-gp": "GP","plot_reg-village": "Village","plot_reg-farmer_name": "Farmer name","plot_reg-spouse": "Spouse","plot_reg-season": "Season","Crop Model Final": "Crop model","plot_reg-plot_gps": "Plot GPS","plot_reg-main_crop": "Main crop","plot_reg-sowing_date": "Date of sowing"},
         "block_col": "plot_reg-block"
     },
     "1.1 NF- Activities": {
