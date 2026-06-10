@@ -122,10 +122,10 @@ elif page in FORMS:
             "plot_reg-crop_type" in df.columns
         ):
             mask = (
-                df["plot_reg-crop_model"].isna() |
+                df["plot_reg-crop_model"].isna()) |
                 (df["plot_reg-crop_model"] == "") |
                 (df["plot_reg-crop_model"] == "None")
-                df["plot_reg-crop_model"].str.lower().str.contains("others", na=False)
+                df["plot_reg-crop_model"].str.lower().str.contains("others", na=False))
             )
             df.loc[mask, "plot_reg-crop_model"] = (
                 df["plot_reg-main_crop"].fillna("") +
