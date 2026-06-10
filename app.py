@@ -120,7 +120,24 @@ elif page in FORMS:
                 df["plot_reg.crop_model"].str.lower().str.contains("others", na=False),
                 "Crop Model Final"
             ] = df["plot_reg.Other_cropmodel"]
-    
+            
+        # If Crop Model is None/blank, combine Main Crop + Crop Type
+        if (
+            "plot_reg.crop_model" in df.columns and
+            "plot_reg.main_crop" in df.columns and
+            "plot_reg.crop_type" in df.columns
+        ):
+            mask = (
+                df["plot_reg.crop_model"].isna() |
+                (df["plot_reg.crop_model"] == "") |
+                (df["plot_reg.crop_model"] == "None")
+            )
+            df.loc[mask, "Crop Model Final"] = (
+                df["plot_reg.main_crop"].fillna("") +
+                " - " +
+                df["plot_reg.crop_type"].fillna("")
+            )
+                                                
     if df.empty:
         st.warning("No data found")
     else:
