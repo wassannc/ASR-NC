@@ -112,14 +112,14 @@ elif page in FORMS:
 
     config = FORMS[page]
     df = load_data(config["form_id"])
-    if "plot_reg.crop_model" in df.columns:
-        df["Crop Model Final"] = df["plot_reg.crop_model"]
+    if "plot_reg-crop_model" in df.columns:
+        df["plot_reg-crop_model"] = df["plot_reg-crop_model"]
 
-        if "plot_reg.Other_cropmodel" in df.columns:
+        if "plot_reg-Other_cropmodel" in df.columns:
             df.loc[
-                df["plot_reg.crop_model"].str.lower().str.contains("others", na=False),
-                "Crop Model Final"
-            ] = df["plot_reg.Other_cropmodel"]
+                df["plot_reg-crop_model"].str.lower().str.contains("others", na=False),
+                "plot_reg.crop_model"
+            ] = df["plot_reg-Other_cropmodel"]
             
         # If Crop Model is None/blank, combine Main Crop + Crop Type
         if (
