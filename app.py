@@ -69,7 +69,7 @@ if page == "MIS-Status":
                 df = df[df[block_col] == selected_block]
 
             # Month filter
-            date_cols = ["__system.submissionDate", "meta.submissionDate"]
+            date_cols = ["SubmissionDate", "meta.SubmissionDate"]
             date_col = None
 
             for col in date_cols:
@@ -161,7 +161,7 @@ elif page in FORMS:
     ):
         df = df[df[block_col] == selected_block]
     # Apply Month Filter
-    date_cols = ["__system.submissionDate", "meta.submissionDate"]
+    date_cols = ["SubmissionDate", "SubmissionDate"]
     date_col = None
     for col in date_cols:
         if col in df.columns:
