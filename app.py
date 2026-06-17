@@ -20,7 +20,17 @@ else:
     page = "MIS-Status"
 if page == "Dashboard":
     st.title("📊 ASR Dashboard")
-    st.info("Dashboard under development")
+    # Load NF Register
+    nf_df = load_data(
+        FORMS["1.NF- Register"]["form_id"]
+    )
+    total_farmers = nf_df[
+        "plot_reg-farmer_id"
+    ].nunique()
+    st.metric(
+        "👨‍🌾 Total Farmers Registered",
+        total_farmers
+    )
     st.stop()
 if page == "MIS-Status":
     import pandas as pd
