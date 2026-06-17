@@ -18,6 +18,7 @@ elif main_section == "Dashboard":
     page = "Dashboard"
 else:
     page = "MIS-Status"
+    
 import pandas as pd
 if page == "Dashboard":
     st.title("📊 ASR Dashboard")
@@ -47,8 +48,45 @@ if page == "Dashboard":
         "CB-info-Event_name"
     ].count()
     
+    # Participants
+    participants = pd.to_numeric(
+        cb_df["Cb-info1-total_members"],
+        errors="coerce"
+    ).sum()
+    # BRC
+    brc_df = load_data(
+        FORMS["2.Bio Resource Centers"]["form_id"]
+    )
+    brc_units = brc_df[
+        "table_list_pd-brc_unit"
+    ].nunique()
+    # Livestock
+    livestock_df = load_data(
+        FORMS["3.Livestock"]["form_id"]
+    )
+    vaccinated = pd.to_numeric(
+        livestock_df["table_list_sd-stock_vaccinated"],
+        errors="coerce"
+    ).sum()
+    # Micro Enterprise
+    me_df = load_data(
+        FORMS["5.Micro Enterprizes"]["form_id"]
+    )
+    rent_income = pd.to_numeric(
+        me_df["table_list_pd2-rent_amount"],
+        errors="coerce"
+    ).sum()
+    processing_income = pd.to_numeric(
+        me_df[
+            "table_list_md-millets_processed_amount_charged_rs"
+        ],
+        errors="coerce"
+    ).sum()
+    enterprise_income = rent_income + processing_income
+    
     st.subheader("📈 Project Overview")
     col1, col2, col3, col4 = st.columns(4)
+    col5, col6, col7, col8 = st.columns(4)
     with col1:
         st.metric(
         "👨‍🌾 Total Farmers Registered",
@@ -68,6 +106,26 @@ if page == "Dashboard":
         st.metric(
             "🎓 Trainings",
             total_events
+        )
+    with col5:
+        st.metric(
+            "👥 Participants",
+            int(participants)
+        )
+    with col6:
+        st.metric(
+            "🏢 BRC Units",
+            brc_units
+        )
+    with col7:
+        st.metric(
+            "💉 Vaccinated",
+            int(vaccinated)
+        )
+    with col8:
+        st.metric(
+            "💰 Enterprise Income",
+            f"₹{enterprise_income:,.0f}"
         )
     st.stop()
 if page == "MIS-Status":
