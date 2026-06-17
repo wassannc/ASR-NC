@@ -140,6 +140,7 @@ crop_summary = (
 st.bar_chart(
     crop_summary.set_index("plot_reg-main_crop")
 )
+st.write(nf_df["plot_reg-main_crop"].unique())
 if page == "MIS-Status":
     import pandas as pd
     import calendar
