@@ -18,7 +18,10 @@ elif main_section == "Dashboard":
     page = "Dashboard"
 else:
     page = "MIS-Status"
-
+if page == "Dashboard":
+    st.title("📊 ASR Dashboard")
+    st.info("Dashboard under development")
+    st.stop()
 if page == "MIS-Status":
     import pandas as pd
     import calendar
