@@ -14,6 +14,8 @@ if main_section == "MIS-Reports":
         "Select Form",
         list(FORMS.keys())
     )
+elif main_section == "Dashboard":
+    page = "Dashboard"
 else:
     page = "MIS-Status"
 
