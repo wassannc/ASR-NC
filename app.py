@@ -32,10 +32,17 @@ if page == "Dashboard":
         nf_df["plot_reg-area_"],
         errors="coerce"
     ).sum()
-    st.metric(
+    col1, col2 = st.columns(2)
+    with col1:
+        st.metric(
         "👨‍🌾 Total Farmers Registered",
         total_farmers
     )
+    with col2:
+        st.metric(
+            "🌾 Total Area (Acres)",
+            round(total_area, 1)
+        )
     st.stop()
 if page == "MIS-Status":
     import pandas as pd
