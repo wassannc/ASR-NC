@@ -18,6 +18,7 @@ elif main_section == "Dashboard":
     page = "Dashboard"
 else:
     page = "MIS-Status"
+import pandas as pd
 if page == "Dashboard":
     st.title("📊 ASR Dashboard")
     # Load NF Register
@@ -27,6 +28,10 @@ if page == "Dashboard":
     total_farmers = nf_df[
         "plot_reg-farmer_id"
     ].nunique()
+    total_area = pd.to_numeric(
+        nf_df["plot_reg-area_"],
+        errors="coerce"
+    ).sum()
     st.metric(
         "👨‍🌾 Total Farmers Registered",
         total_farmers
