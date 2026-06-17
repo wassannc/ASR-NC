@@ -32,7 +32,23 @@ if page == "Dashboard":
         nf_df["plot_reg-area_"],
         errors="coerce"
     ).sum()
-    col1, col2 = st.columns(2)
+    # NF Activities
+    activity_df = load_data(
+        FORMS["1.1 NF- Activities"]["form_id"]
+    )
+    pop_farmers = activity_df[
+        "Primary_details-farmer_id"
+    ].nunique()
+    # Capacity Building
+    cb_df = load_data(
+        FORMS["6.Capacity Building"]["form_id"]
+    )
+    total_events = cb_df[
+        "CB-info-Event_name"
+    ].count()
+    
+    st.subheader("📈 Project Overview")
+    col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.metric(
         "👨‍🌾 Total Farmers Registered",
@@ -42,6 +58,16 @@ if page == "Dashboard":
         st.metric(
             "🌾 Total Area (Acres)",
             round(total_area, 1)
+        )
+    with col3:
+        st.metric(
+            "🌱 POP Farmers",
+            pop_farmers
+        )
+    with col4:
+        st.metric(
+            "🎓 Trainings",
+            total_events
         )
     st.stop()
 if page == "MIS-Status":
