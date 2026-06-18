@@ -127,7 +127,7 @@ if page == "Dashboard":
             "💰 Enterprise Income",
             f"₹{enterprise_income:,.0f}"
         )
-    st.stop()
+    
     st.markdown("---")
     st.subheader("🌾 Crop-wise Farmers")
     crop_summary = (
