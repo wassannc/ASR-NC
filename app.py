@@ -25,28 +25,30 @@ if page == "Dashboard":
     st.title("📊 ASR Dashboard")
     
     # Filters
+    col1, col2 = st.columns(2)
+    
     with col1:
-    all_blocks = set()
+        all_blocks = set()
 
-    for form_name, config in FORMS.items():
-        df_temp = load_data(config["form_id"])
-        col = config.get("block_col")
+        for form_name, config in FORMS.items():
+            df_temp = load_data(config["form_id"])
+            col = config.get("block_col")
 
-        if col and col in df_temp.columns:
-            all_blocks.update(df_temp[col].dropna().unique())
+            if col and col in df_temp.columns:
+                all_blocks.update(df_temp[col].dropna().unique())
 
-    all_blocks = sorted(all_blocks)
+        all_blocks = sorted(all_blocks)
 
-    selected_block = st.selectbox(
-        "Select Block",
-        ["All"] + list(all_blocks)
-    )
+        selected_block = st.selectbox(
+            "Select Block",
+            ["All"] + list(all_blocks)
+        )
     with col2:
-    months = ["All"] + [calendar.month_name[i] for i in range(1, 13)]
-    selected_month = st.selectbox(
-        "Select Month",
-        months
-    )
+        months = ["All"] + [calendar.month_name[i] for i in range(1, 13)]
+        selected_month = st.selectbox(
+            "Select Month",
+            months
+        )
     # Load NF Register
     nf_df = load_data(
         FORMS["1.NF- Register"]["form_id"]
