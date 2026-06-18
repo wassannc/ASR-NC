@@ -205,6 +205,26 @@ if page == "Dashboard":
         cb_summary,
         use_container_width=True
     )
+
+    st.markdown("---")
+    st.subheader("🏢 BRC Summary")
+    brc_summary = (
+        brc_df.groupby("table_list_pd-brc_unit")
+        .agg(
+            Income=("table_list_sd-total_income", "sum")
+        )
+        .reset_index()
+    )
+
+    brc_summary.columns = [
+        "BRC Unit",
+        "Income"
+    ]
+
+    st.dataframe(
+        brc_summary,
+        use_container_width=True
+    )
         
     st.stop()
     
