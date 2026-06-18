@@ -128,19 +128,20 @@ if page == "Dashboard":
             f"₹{enterprise_income:,.0f}"
         )
     st.stop()
-st.markdown("---")
-st.subheader("🌾 Crop-wise Farmers")
-crop_summary = (
-    nf_df.groupby("plot_reg-main_crop")
-    .size()
-    .reset_index(name="Farmers")
-    .sort_values("Farmers", ascending=False)
-)
+    st.markdown("---")
+    st.subheader("🌾 Crop-wise Farmers")
+    crop_summary = (
+        nf_df.groupby("plot_reg-main_crop")
+        .size()
+        .reset_index(name="Farmers")
+        .sort_values("Farmers", ascending=False)
+    )
 
-st.bar_chart(
-    crop_summary.set_index("plot_reg-main_crop")
-)
-st.write(nf_df["plot_reg-main_crop"].unique())
+    st.bar_chart(
+        crop_summary.set_index("plot_reg-main_crop")
+    )
+    st.stop()
+    
 if page == "MIS-Status":
     import pandas as pd
     import calendar
