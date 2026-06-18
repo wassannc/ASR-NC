@@ -146,10 +146,12 @@ if page == "Dashboard":
         crop_df["plot_reg-crop_model"].isna() |
         (crop_df["plot_reg-crop_model"] == "")
     )
-    crop_df.loc[mask, "crop_model_final"] = crop_df.loc[
-        mask,
-        "plot_reg-main_crop"
-    ]
+    crop_df.loc[mask, "crop_model_final"] = (
+        crop_df["plot_reg-main_crop"].fillna("")
+        + "-"
+        + crop_df["plot_reg-crop_type"].fillna("")
+    )
+    
     crop_df.loc[
         ~mask,
         "crop_model_final"
