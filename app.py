@@ -21,11 +21,46 @@ else:
     
 import pandas as pd
 if page == "Dashboard":
+    st.markdown("### Filters")
     st.title("📊 ASR Dashboard")
+    
+    # Filters
+    with col1:
+    all_blocks = set()
+
+    for form_name, config in FORMS.items():
+        df_temp = load_data(config["form_id"])
+        col = config.get("block_col")
+
+        if col and col in df_temp.columns:
+            all_blocks.update(df_temp[col].dropna().unique())
+
+    all_blocks = sorted(all_blocks)
+
+    selected_block = st.selectbox(
+        "Select Block",
+        ["All"] + list(all_blocks)
+    )
+    with col2:
+    months = ["All"] + [calendar.month_name[i] for i in range(1, 13)]
+    selected_month = st.selectbox(
+        "Select Month",
+        months
+    )
     # Load NF Register
     nf_df = load_data(
         FORMS["1.NF- Register"]["form_id"]
     )
+    block_col = "plot_reg-block"
+
+    if (
+        selected_block != "All"
+        and block_col in nf_df.columns
+    ):
+        nf_df = nf_df[
+            nf_df[block_col] == selected_block
+        ]
+        
     total_farmers = nf_df[
         "plot_reg-farmer_id"
     ].nunique()
@@ -88,6 +123,7 @@ if page == "Dashboard":
     col1, col2, col3, col4 = st.columns(4)
     col5, col6, col7, col8 = st.columns(4)
     with col1:
+        st.write("Selected Block:", selected_block)
         st.metric(
         "👨‍🌾 Total Farmers Registered",
         total_farmers
