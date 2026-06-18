@@ -140,6 +140,49 @@ if page == "Dashboard":
     st.bar_chart(
         crop_summary.set_index("plot_reg-main_crop")
     )
+    st.subheader("📋 Crop Model Summary")
+    crop_df = nf_df.copy()
+    mask = (
+        crop_df["plot_reg-crop_model"].isna() |
+        (crop_df["plot_reg-crop_model"] == "")
+    )
+    crop_df.loc[mask, "crop_model_final"] = crop_df.loc[
+        mask,
+        "plot_reg-main_crop"
+    ]
+    crop_df.loc[
+        ~mask,
+        "crop_model_final"
+    ] = crop_df.loc[
+        ~mask,
+        "plot_reg-crop_model"
+    ]
+    crop_df["plot_reg-area_"] = pd.to_numeric(
+        crop_df["plot_reg-area_"],
+        errors="coerce"
+    )
+    model_summary = (
+        crop_df.groupby("crop_model_final")
+        .agg(
+            Farmers=("plot_reg-farmer_id", "nunique"),
+            Area_Acres=("plot_reg-area_", "sum")
+        )
+        .reset_index()
+    )
+    model_summary.columns = [
+        "Crop Model",
+        "Farmers",
+        "Area (Acres)"
+    ]
+    model_summary = model_summary.sort_values(
+        "Farmers",
+        ascending=False
+    )
+    st.dataframe(
+        model_summary,
+        use_container_width=True
+    )
+    
     st.stop()
     
 if page == "MIS-Status":
