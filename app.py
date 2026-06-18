@@ -184,7 +184,28 @@ if page == "Dashboard":
         model_summary,
         use_container_width=True
     )
-    
+    st.markdown("---")
+    st.subheader("🎓 Capacity Building Summary")
+    cb_summary = (
+        cb_df.groupby("CB-info-cb_type")
+        .agg(
+            Events=("CB-info-Event_name", "count"),
+            Participants=("Cb-info1-total_members", "sum")
+        )
+        .reset_index()
+    )
+
+    cb_summary.columns = [
+        "Event Type",
+        "Events",
+        "Participants"
+    ]
+
+    st.dataframe(
+        cb_summary,
+        use_container_width=True
+    )
+        
     st.stop()
     
 if page == "MIS-Status":
