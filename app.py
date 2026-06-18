@@ -225,7 +225,39 @@ if page == "Dashboard":
         brc_summary,
         use_container_width=True
     )
-        
+
+    st.markdown("---")
+    st.subheader(" Livestock Summary")
+    livestock_summary = (
+        livestock_df.groupby("table_list_df-livestock_type")
+        .agg(
+            Vaccinated=("table_list_sd-stock_vaccinated", "sum")
+        )
+        .reset_index()
+    )
+
+    st.dataframe(
+        livestock_summary,
+        use_container_width=True
+    )
+    st.markdown("---")
+    st.subheader("🏭 Micro Enterprise Summary")
+    me_summary = (
+        me_df.groupby("table_list_pd1-processing_hub_tool")
+        .agg(
+            Rent_Income=("table_list_pd2-rent_amount", "sum"),
+            Processing_Income=(
+                "table_list_md-millets_processed_amount_charged_rs",
+                "sum"
+            )
+        )
+        .reset_index()
+    )
+
+    st.dataframe(
+        me_summary,
+        use_container_width=True
+    )
     st.stop()
     
 if page == "MIS-Status":
