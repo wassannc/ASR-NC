@@ -26,7 +26,6 @@ if page == "Dashboard":
     st.markdown("### Filters")
     st.title("📊 ASR Dashboard")
     
-    # Filters
     col1, col2 = st.columns(2)
     
     with col1:
