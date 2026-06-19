@@ -82,6 +82,18 @@ if page == "Dashboard":
         nf_df = nf_df[
             nf_df[block_col] == selected_block
         ]
+        activity_df = activity_df[
+            activity_df["Primary_details-block"]
+            == selected_block
+        ]
+        cb_df = cb_df[
+            cb_df["CB-info-block"]
+            == selected_block
+        ]
+        brc_df = brc_df[
+            brc_df["table_list_pd-block"]
+            == selected_block
+        ]
         
     total_farmers = nf_df[
         "plot_reg-farmer_id"
