@@ -72,15 +72,6 @@ if page == "Dashboard":
     me_df = load_data(
         FORMS["5.Micro Enterprizes"]["form_id"]
     )
-    # Debug columns temp
-    st.write("Activity columns")
-    st.write(activity_df.columns.tolist())
-
-    st.write("CB columns")
-    st.write(cb_df.columns.tolist())
-
-    st.write("BRC columns")
-    st.write(brc_df.columns.tolist())
     
     block_col = "plot_reg-block"
 
