@@ -53,7 +53,17 @@ if page == "Dashboard":
     nf_df = load_data(
         FORMS["1.NF- Register"]["form_id"]
     )
-    
+    activity_df = load_data(
+        FORMS["1.1 NF- Activities"]["form_id"]
+    )
+
+    cb_df = load_data(
+        FORMS["6.Capacity Building"]["form_id"]
+    )
+
+    brc_df = load_data(
+        FORMS["2.Bio Resource Centers"]["form_id"]
+    )
     block_col = "plot_reg-block"
 
     if (
