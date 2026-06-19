@@ -84,16 +84,11 @@ if page == "Dashboard":
         errors="coerce"
     ).sum()
     # NF Activities
-    activity_df = load_data(
-        FORMS["1.1 NF- Activities"]["form_id"]
-    )
     pop_farmers = activity_df[
         "Primary_details-farmer_id"
     ].nunique()
+    
     # Capacity Building
-    cb_df = load_data(
-        FORMS["6.Capacity Building"]["form_id"]
-    )
     total_events = cb_df[
         "CB-info-Event_name"
     ].count()
@@ -104,12 +99,10 @@ if page == "Dashboard":
         errors="coerce"
     ).sum()
     # BRC
-    brc_df = load_data(
-        FORMS["2.Bio Resource Centers"]["form_id"]
-    )
     brc_units = brc_df[
         "table_list_pd-brc_unit"
     ].nunique()
+    
     # Livestock
     livestock_df = load_data(
         FORMS["3.Livestock"]["form_id"]
