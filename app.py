@@ -23,7 +23,7 @@ import pandas as pd
 if page == "Dashboard":
     import pandas as pd
     import calendar
-    st.title("📊 ASR Dashboard")
+    st.title("📊 IINF Dashboard 2026-27")
     
     col1, col2 = st.columns(2)
     
