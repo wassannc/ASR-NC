@@ -53,6 +53,35 @@ if page == "Dashboard":
     nf_df = load_data(
         FORMS["1.NF- Register"]["form_id"]
     )
+    activity_df = load_data(
+        FORMS["1.1 NF- Activities"]["form_id"]
+    )
+
+    cb_df = load_data(
+        FORMS["6.Capacity Building"]["form_id"]
+    )
+
+    brc_df = load_data(
+        FORMS["2.Bio Resource Centers"]["form_id"]
+    )
+
+    livestock_df = load_data(
+        FORMS["3.Livestock"]["form_id"]
+    )
+
+    me_df = load_data(
+        FORMS["5.Micro Enterprizes"]["form_id"]
+    )
+    # Debug columns temp
+    st.write("Activity columns")
+    st.write(activity_df.columns.tolist())
+
+    st.write("CB columns")
+    st.write(cb_df.columns.tolist())
+
+    st.write("BRC columns")
+    st.write(brc_df.columns.tolist())
+    
     block_col = "plot_reg-block"
 
     if (
