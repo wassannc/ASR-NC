@@ -142,7 +142,7 @@ if page == "Dashboard":
     col5, col6, col7, col8 = st.columns(4)
     with col1:
         st.metric(
-        "👨‍🌾 Total Farmers Registered",
+        "👨‍🌾 Total Farmers",
         total_farmers
     )
     with col2:
