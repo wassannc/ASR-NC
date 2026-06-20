@@ -172,7 +172,7 @@ if page == "Dashboard":
         )
     with col7:
         st.metric(
-            "💉 Vaccinated",
+            "💉Livestock Vaccinated",
             int(vaccinated)
         )
     with col8:
