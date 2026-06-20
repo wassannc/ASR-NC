@@ -141,7 +141,6 @@ if page == "Dashboard":
     col1, col2, col3, col4 = st.columns(4)
     col5, col6, col7, col8 = st.columns(4)
     with col1:
-        st.write("Selected Block:", selected_block)
         st.metric(
         "👨‍🌾 Total Farmers Registered",
         total_farmers
