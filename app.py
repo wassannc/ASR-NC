@@ -85,6 +85,7 @@ if page == "Dashboard":
             brc_df["table_list_pd-block"]
             == selected_block
         ]
+        
         livestock_df = livestock_df[
             livestock_df["table_list_df-block"]
             == selected_block
