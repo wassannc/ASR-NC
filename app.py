@@ -85,6 +85,15 @@ if page == "Dashboard":
             brc_df["table_list_pd-block"]
             == selected_block
         ]
+        livestock_df = livestock_df[
+            livestock_df["table_list_df-block"]
+            == selected_block
+        ]
+
+        me_df = me_df[
+            me_df["table_list_pd-block"]
+            == selected_block
+        ]
         
     total_farmers = nf_df[
         "plot_reg-farmer_id"
