@@ -64,6 +64,12 @@ if page == "Dashboard":
     brc_df = load_data(
         FORMS["2.Bio Resource Centers"]["form_id"]
     )
+    livestock_df = load_data(
+        FORMS["3.Livestock"]["form_id"]
+    )
+    me_df = load_data(
+        FORMS["5.Micro Enterprizes"]["form_id"]
+    )
     block_col = "plot_reg-block"
 
     if (
